@@ -1,0 +1,9 @@
+#Example of valid IP/ranges
+#NOTE: username and password fields are TAB delimited.
+#192.168.1.10
+#192.168.5.5-192.168.5.25
+#172.16.13.0/24
+#10.0.0.0/16
+#172.16.13.52-172.16.13.80
+#172.16.13.38-172.16.13.72
+#172.16.13.0/24	admin	password

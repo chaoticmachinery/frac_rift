@@ -1,0 +1,9 @@
+#PAExec
+paexec.exe \\[IP] -n 4 -u [ADMINID] -p [ADMINPASS] -s cmd /C "net use [SHAREDRV] /delete /yes & net use [SHAREDRV] [SHARE] /user:[SHAREUSERID] [SHAREPASSWD] && cd /d [SAVEDRIVE] && rift.exe --verbose --savedrive [SAVEDRIVE] && net use [SHAREDRV] /delete /yes"
+#paexec.exe \\[IP] -n 4 -u [ADMINID] -p [ADMINPASS] -s cmd /C "net use [SHAREDRV] /delete /yes & net use [SHAREDRV] [SHARE] /user:[SHAREUSERID] [SHAREPASSWD] && cd /d [SAVEDRIVE] && go.bat && net use [SHAREDRV] /delete /yes"
+
+#Winexe 1.0fe
+#/usr/bin/winexe --user [ADMINID] --password=[ADMINPASS]  --uninstall --system //[IP] "cmd /C net use [SHAREDRV] /delete /yes & net use [SHAREDRV] \\[SHARE] /user:[SHAREUSERID] [SHAREPASSWD] && cd /d [SAVEDRIVE] && rift.exe --savedrive [SAVEDRIVE] && net use [SHAREDRV] /delete /yes"
+
+#Winexe 1.1
+#/usr/bin/winexe --user=[ADMINID]%[ADMINPASS] --uninstall --system //[IP] "cmd /C net use [SHAREDRV] /delete /yes & net use [SHAREDRV] \\[SHARE] /user:[SHAREUSERID] [SHAREPASSWD] && cd /d [SAVEDRIVE] && rift.exe --savedrive [SAVEDRIVE] && net use [SHAREDRV] /delete /yes"
