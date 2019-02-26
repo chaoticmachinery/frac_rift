@@ -1,0 +1,53 @@
+#Get the system hive
+system32\/config\/SYSTEM$
+#Get the default hive
+system32\/config\/DEFAULT$
+#Get the sam hive
+system32\/config\/SAM$
+#Get the security hive
+system32\/config\/SECURITY$
+#Get the software hive
+system32\/config\/SOFTWARE$
+#Get the contents of the Tasks directory for Windows 2000, XP, @003
+\/Windows\/Tasks\/
+#Get the Contents of the Tasks directory for Windows 7+
+\/Windows\/System32\/Tasks\/
+#Get a copy of the task scheduler logs
+Microsoft-Windows-TaskScheduler*\.evtx$
+#Gathers all users ntuser.dat files
+ntuser.dat$
+#Win7 shellbag data
+#\Users\[user]\AppData\Local\Microsoft\Windows\UsrClass.dat
+usrclass.dat$
+#Win8 Application Experience and Compatibility  C:\Windows\AppCompat\Programs\Amcache.hve
+amcache.hve$
+#journeyintoir.blogspot.com/2014/04/triaging-with-recentfilecachebcf-file.html
+RecentFilecache.bcf$
+#Get the contents of the Prefetch directory
+\/Windows\/prefetch\/
+#Event Logs for Vista+
+system32\/winevt\/logs\/
+#Event Logs for WinXP
+\/appevent.evt$
+\/sysevent.evt$
+\/secevent.evt$
+#WinXP Recycle Bin
+\/info2$
+#Vista+ Reycle Bin; Gets Index files
+\/\$Recycle.bin\/S-.*\/\$I.*
+#Gets everything in the Recycle.bin folder
+#\/\$Recycle.bin\/
+#Page file
+#\/pagefile.sys$
+#Hibernation file
+#\/hiberfil.sys$
+#Microsoft Malicious Software Removal (MSRT)
+\/Windows\/Debug\/mrt.log$
+\/Windows\/Debug\/mrteng.log$
+#Windows Defender Logs
+\/ProgramData\/Microsoft\/Windows Defender\/Support\/.*log$
+#Powershell Info
+\/Windows\/System32\/wbem\/Repository\/OBJECTS.DATA$
+\/Windows\/System32\/wbem\/Repository\/FS\/OBJECTS.DATA$
+#Syscache.hve  https://github.com/libyal/winreg-kb/blob/master/documentation/SysCache.asciidoc
+\/System Volume Information\/Syscache.hve

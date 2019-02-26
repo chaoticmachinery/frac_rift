@@ -1,0 +1,22 @@
+#PAExec
+#paexec.exe \\[IP] -n 4 -u [ADMINID] -p [ADMINPASS] -s cmd /C "net use [SHAREDRV] /delete /yes & net use [SHAREDRV] [SHARE] /user:[SHAREUSERID] [SHAREPASSWD] && cd /d [SAVEDRIVE] && rift.exe --verbose --savedrive [SAVEDRIVE] && net use [SHAREDRV] /delete /yes"
+#paexec.exe \\[IP] -n 4 -u [ADMINID] -p [ADMINPASS] -s cmd /C "net use [SHAREDRV] /delete /yes & net use [SHAREDRV] [SHARE] /user:[SHAREUSERID] [SHAREPASSWD] && cd /d [SAVEDRIVE] && go.bat && net use [SHAREDRV] /delete /yes"
+
+#pyexec
+pyexec --dest [IP] --user [ADMINID] --pass [ADMINPASS] --cmd cmd --cmdarg "net use [SHAREDRV] /delete /yes & net use [SHAREDRV] [SHARE] /user:[SHAREUSERID] [SHAREPASSWD] && cd /d [SAVEDRIVE] && rift.exe --verbose --savedrive [SAVEDRIVE] && net use [SHAREDRV] /delete /yes"
+
+#Winexe 1.0fe
+#/usr/bin/winexe --user [ADMINID] --password=[ADMINPASS]  --uninstall --system //[IP] "cmd /C net use [SHAREDRV] /delete /yes & net use [SHAREDRV] \\[SHARE] /user:[SHAREUSERID] [SHAREPASSWD] && cd /d [SAVEDRIVE] && rift.exe --savedrive [SAVEDRIVE] && net use [SHAREDRV] /delete /yes"
+
+#Winexe 1.1
+#/usr/bin/winexe --user=[ADMINID]%[ADMINPASS] --uninstall --system //[IP] "cmd /C net use [SHAREDRV] /delete /yes & net use [SHAREDRV] \\[SHARE] /user:[SHAREUSERID] [SHAREPASSWD] && cd /d [SAVEDRIVE] && rift.exe --savedrive [SAVEDRIVE] && net use [SHAREDRV] /delete /yes"
+
+#SSH Linux
+#sshpass -p [ADMINPASS] ssh [IP] "mkdir [SHAREDRV];mount [MNTOPTS] [SRCBOX]:[SRCMNT] [SHAREDRV] && cd [SHAREDRV] && ls  ; cd / && umount [SHAREDRV] && rmdir [SHAREDRV]"
+#sshpass -p [ADMINPASS] ssh [IP] "mkdir [SHAREDRV];mount [MNTOPTS] [SRCBOX]:[SRCMNT] [SHAREDRV] && cd [SHAREDRV] && ./frac_v0.05/rift --verbose --savedrive [SAVEDRIVE] "
+
+#RIFT
+sshpass -p [ADMINPASS] ssh [IP] "mkdir [SHAREDRV];mount [MNTOPTS] [SRCBOX]:[SRCMNT] [SHAREDRV] ; cd [SHAREDRV]/frac_v0.05a && ./rift --verbose --savedrive [SAVEDRIVE] ; cd / && umount [SHAREDRV] && rmdir [SHAREDRV]" 2>&1
+
+#CLAMAV
+#sshpass -p [ADMINPASS] ssh [IP] "mkdir [SHAREDRV];mount [MNTOPTS] [SRCBOX]:[SRCMNT] [SHAREDRV] ; cd [SHAREDRV]/clamdb && ./clamav.sh [SAVEDRIVE] ; cd / && umount [SHAREDRV] && rmdir [SHAREDRV]" 
