@@ -1,0 +1,18 @@
+#Shell Info
+\.bash_history
+\.bashrc
+\/\.csh
+\/\.zsh
+\/\.sh_history
+\/\.profile
+#SSH
+\.ssh
+#etc dir
+^\/etc\/
+#Cron
+^\/var\/spool\/at
+^\/var\/spool\/cron
+^\/var\/spool\/anacron
+#logs
+^\/var\/log\/
+^\/var\/adm\/
